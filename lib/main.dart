@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hex_color/flutter_hex_color.dart';
 
@@ -27,7 +28,8 @@ class RegistrationPage extends StatefulWidget {
 class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
-    Widget daysOfTheWeek() {
+    /*Widget daysOfTheWeek() {
+
       return Padding(
         padding: const EdgeInsets.all(16),
         child: Row(
@@ -141,7 +143,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
           ],
         ),
       );
-    }
+    }*/
 
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
@@ -172,7 +174,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               textAlign: TextAlign.start,
             ),
           ),
-          daysOfTheWeek(),
+          DaysOfWeek(),
           Padding(
             padding: const EdgeInsets.all(16),
             child: new Divider(
@@ -268,3 +270,76 @@ class _RegistrationPageState extends State<RegistrationPage> {
     );
   }
 }
+
+class DaysOfWeek extends StatefulWidget {
+  @override
+  _DaysOfWeekState createState() => _DaysOfWeekState();
+}
+
+class _DaysOfWeekState extends State<DaysOfWeek> {
+  final everyDaysOfWeek = ['PR', 'AN', 'TR', 'KT', 'PN', 'ST', 'SK'];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.green,
+      body: Container(
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: everyDaysOfWeek.length,
+          itemBuilder: (context, i) {
+            return Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                    alignment: Alignment.center,
+                    height: 36.0,
+                    width: 36,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                          25.0,
+                        ),
+                        border: Border.all(width: 1, color: Colors.white)),
+                    child: Text(
+                      everyDaysOfWeek[i],
+                      style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.white,
+                          letterSpacing: 0.4),
+                    ),
+                  )
+                ],
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+/*return Padding(
+    padding: const EdgeInsets.all(16),
+    child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: <Widget>[
+    Container(
+    alignment: Alignment.center,
+    height: 36.0,
+    width: 36,
+    decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(
+    25.0,
+    ),
+    border: Border.all(width: 1, color: Colors.white)),
+    child: Text(
+    'everyDaysOfWeek.PR',
+    style: TextStyle(
+    fontSize: 12, color: Colors.white, letterSpacing: 0.4),
+    ),
+    )
+    ],
+    ),
+    ),*/
