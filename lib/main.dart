@@ -23,18 +23,19 @@ class DayOfWeek extends StatefulWidget {
 
 class _DayOfWeekState extends State<DayOfWeek> {
   List<String> selectedReportList = List();
-  List<String> reportList = ['PR', 'AN', 'TR', 'KT', 'PN', 'ST', 'SK'];
+  List<String> reportList = ['PR', 'AN', 'TR', 'KT', 'PN', 'ŠT', 'SK'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        padding: EdgeInsets.only(left: 16, right: 16),
         color: Color(0xFF00539C),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 100, left: 16),
+              padding: const EdgeInsets.only(top: 100),
               child: Text(
                 'Pasirinkite darbo laiko nustatymus. \nNustatymai gali būti pakeičiami vėliau.',
                 style: TextStyle(
@@ -45,7 +46,7 @@ class _DayOfWeekState extends State<DayOfWeek> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.only(top: 16),
               child: Text(
                 'Darbo dienos',
                 style: TextStyle(
@@ -56,7 +57,7 @@ class _DayOfWeekState extends State<DayOfWeek> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.only(top: 16),
               child: MultiSelectChip(
                 reportList,
                 onSelectionChanged: (selectedList) {
@@ -66,37 +67,28 @@ class _DayOfWeekState extends State<DayOfWeek> {
                 },
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Divider(
-                color: Colors.white,
-              ),
+            Divider(
+              color: Colors.white,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    'Pradžia',
-                    style: TextStyle(fontSize: 14, color: Colors.white),
-                  ),
-                  Text('8:00',
-                      style: TextStyle(fontSize: 14, color: Colors.white))
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'Pradžia',
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                ),
+                Text('8:00',
+                    style: TextStyle(fontSize: 14, color: Colors.white))
+              ],
             ),
+            Text('Pirmas vizitas dienoje',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Color.fromRGBO(255, 255, 255, 0.7),
+                  letterSpacing: 0.4,
+                )),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text('Pirmas vizitas dienoje',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Color.fromRGBO(255, 255, 255, 0.7),
-                    letterSpacing: 0.4,
-                  )),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.only(top: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -109,49 +101,37 @@ class _DayOfWeekState extends State<DayOfWeek> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text('Paskutinio vizito pabaiga',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Color.fromRGBO(255, 255, 255, 0.7),
-                    letterSpacing: 0.4,
-                  )),
+            Text('Paskutinio vizito pabaiga',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Color.fromRGBO(255, 255, 255, 0.7),
+                  letterSpacing: 0.4,
+                )),
+            Divider(
+              color: Colors.white,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16, top: 0),
-              child: Divider(
-                color: Colors.white,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'Atostogos',
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                ),
+                Text('PRIDETI',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Color(0xFFFBC02D),
+                        letterSpacing: 0.75))
+              ],
             ),
+            Text('Neprivaloma pridėti',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Color.fromRGBO(255, 255, 255, 0.7),
+                  letterSpacing: 0.4,
+                )),
             Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    'Atostogos',
-                    style: TextStyle(fontSize: 14, color: Colors.white),
-                  ),
-                  Text('PRIDETI',
-                      style: TextStyle(
-                          fontSize: 14,
-                          color: Color(0xFFFBC02D),
-                          letterSpacing: 0.75))
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text('Neprivaloma pridėti',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Color.fromRGBO(255, 255, 255, 0.7),
-                    letterSpacing: 0.4,
-                  )),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.only(top: 16),
               child: Divider(
                 color: Colors.white,
               ),
