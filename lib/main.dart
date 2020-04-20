@@ -29,7 +29,7 @@ class _DayOfWeekState extends State<DayOfWeek> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(left: 16, right: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16),
         color: Color(0xFF00539C),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
