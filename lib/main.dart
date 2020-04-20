@@ -34,38 +34,32 @@ class _DayOfWeekState extends State<DayOfWeek> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 100),
-              child: Text(
-                'Pasirinkite darbo laiko nustatymus. \nNustatymai gali būti pakeičiami vėliau.',
-                style: TextStyle(
-                  color: Color(0xFFFFFFFF),
-                  fontSize: 16.0,
-                  letterSpacing: 0.15,
-                ),
+            SizedBox(height: 100),
+            Text(
+              'Pasirinkite darbo laiko nustatymus. \nNustatymai gali būti pakeičiami vėliau.',
+              style: TextStyle(
+                color: Color(0xFFFFFFFF),
+                fontSize: 16.0,
+                letterSpacing: 0.15,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: Text(
-                'Darbo dienos',
-                style: TextStyle(
-                  color: Color(0xFFFFFFFF),
-                  fontSize: 14.0,
-                  letterSpacing: 0.15,
-                ),
+            SizedBox(height: 16),
+            Text(
+              'Darbo dienos',
+              style: TextStyle(
+                color: Color(0xFFFFFFFF),
+                fontSize: 14.0,
+                letterSpacing: 0.15,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: MultiSelectChip(
-                reportList,
-                onSelectionChanged: (selectedList) {
-                  setState(() {
-                    selectedReportList = selectedList;
-                  });
-                },
-              ),
+            SizedBox(height: 16),
+            MultiSelectChip(
+              reportList,
+              onSelectionChanged: (selectedList) {
+                setState(() {
+                  selectedReportList = selectedList;
+                });
+              },
             ),
             Divider(
               color: Colors.white,
@@ -87,19 +81,17 @@ class _DayOfWeekState extends State<DayOfWeek> {
                   color: Color.fromRGBO(255, 255, 255, 0.7),
                   letterSpacing: 0.4,
                 )),
-            Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    'Pabaiga',
-                    style: TextStyle(fontSize: 14, color: Colors.white),
-                  ),
-                  Text('17:00',
-                      style: TextStyle(fontSize: 14, color: Colors.white))
-                ],
-              ),
+            SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'Pabaiga',
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                ),
+                Text('17:00',
+                    style: TextStyle(fontSize: 14, color: Colors.white))
+              ],
             ),
             Text('Paskutinio vizito pabaiga',
                 style: TextStyle(
@@ -130,8 +122,8 @@ class _DayOfWeekState extends State<DayOfWeek> {
                   color: Color.fromRGBO(255, 255, 255, 0.7),
                   letterSpacing: 0.4,
                 )),
-            Padding(
-              padding: const EdgeInsets.only(top: 16),
+            SizedBox(
+              height: 16,
               child: Divider(
                 color: Colors.white,
               ),
