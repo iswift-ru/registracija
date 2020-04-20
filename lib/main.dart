@@ -166,7 +166,8 @@ class _MultiSelectChipState extends State<MultiSelectChip> {
         selected: selectedChoices.contains(item),
         shape: selectedChoices.contains(item)
             ? CircleBorder(side: BorderSide(color: Colors.white, width: 1))
-            : CircleBorder(side: BorderSide.none),
+            : CircleBorder(
+                side: BorderSide(color: Color(0xFF00539C), width: 1)),
         backgroundColor: Color(0xFF00539C),
         selectedColor: Color(0xFF00539C),
         onSelected: (selected) {
