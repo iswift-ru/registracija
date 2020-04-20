@@ -22,8 +22,8 @@ class DayOfWeek extends StatefulWidget {
 }
 
 class _DayOfWeekState extends State<DayOfWeek> {
-  List<String> selectedReportList = List();
-  List<String> reportList = ['PR', 'AN', 'TR', 'KT', 'PN', 'ŠT', 'SK'];
+  List<String> selectedDayList = List();
+  List<String> dayList = ['PR', 'AN', 'TR', 'KT', 'PN', 'ŠT', 'SK'];
 
   @override
   Widget build(BuildContext context) {
@@ -54,10 +54,10 @@ class _DayOfWeekState extends State<DayOfWeek> {
             ),
             SizedBox(height: 16),
             MultiSelectChip(
-              reportList,
+              dayList,
               onSelectionChanged: (selectedList) {
                 setState(() {
-                  selectedReportList = selectedList;
+                  selectedDayList = selectedList;
                 });
               },
             ),
@@ -136,10 +136,10 @@ class _DayOfWeekState extends State<DayOfWeek> {
 }
 
 class MultiSelectChip extends StatefulWidget {
-  final List<String> reportList;
+  final List<String> dayList;
   final Function(List<String>) onSelectionChanged;
 
-  MultiSelectChip(this.reportList, {this.onSelectionChanged});
+  MultiSelectChip(this.dayList, {this.onSelectionChanged});
 
   @override
   _MultiSelectChipState createState() => _MultiSelectChipState();
@@ -151,7 +151,7 @@ class _MultiSelectChipState extends State<MultiSelectChip> {
   _buildChoiceList() {
     List<Widget> choices = List();
 
-    widget.reportList.forEach((item) {
+    widget.dayList.forEach((item) {
       choices.add(ChoiceChip(
         label: Text(item),
         labelStyle: TextStyle(color: Colors.white, fontSize: 12),
